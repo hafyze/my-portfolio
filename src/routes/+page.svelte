@@ -25,19 +25,36 @@
 			title: 'Smart Car Comparison & Recommendation System',
 			desc: 'AI-powered platform to compare cars, analyze market trends, and recommend vehicles based on user preferences.',
 			tech: ['SvelteKit', 'Python', 'MongoDB', 'ML'],
-			link: 'https://github.com/hafyze/Degree_FYP'
+			link: 'https://github.com/hafyze/Degree_FYP',
+			type: 'Web App (FYP)'
 		},
 		{
 			title: 'Malaysia Vehicle Registration Analytics Dashboard',
 			desc: 'A web-based analytics dashboard that visualizes monthly Malaysian vehicle registration data from government sources, providing interactive charts, filtering, and trend insights.',
 			tech: ['SvelteKit', 'Data Visualization', 'Public API'],
-			link: 'https://github.com/hafyze/gov-data-car'
+			link: 'https://github.com/hafyze/gov-data-car',
+			type: 'Web App'
 		},
 		{
 			title: 'Roomstay Booking Website',
 			desc: 'Modern booking platform focused on clean UI, performance, and SEO optimization.',
 			tech: ['SvelteKit', 'Tailwind', 'Vercel'],
-			link: 'https://www.narkg.com/'
+			link: 'https://www.narkg.com/',
+			type: 'Web App'
+		},
+		{
+			title: 'Online Car Marketplace',
+			desc: 'Modern booking platform focused on clean UI, performance, and SEO optimization.',
+			tech: ['SvelteKit', 'Tailwind', 'Vercel'],
+			link: 'https://car-lists.vercel.app/',
+			type: 'Web App'
+		},
+		{
+			title: 'Expense Tracking Mobile Application',
+			desc: 'A hybrid mobile app for recording and analyzing personal expenses, offering category-based tracking and spending insights using a SvelteKit and Capacitor stack.',
+			tech: ['SvelteKit', 'Capacitor', 'TailwindCSS'],
+			link: 'https://github.com/hafyze/spending-tracker',
+			type: 'Mobile App'
 		}
 	];
 </script>
@@ -113,8 +130,12 @@
 		{#each projects as project}
 			<Card class="transition hover:-translate-y-1 hover:shadow-md">
 				<CardContent class="flex h-full flex-col p-6">
-					<h4 class="text-lg font-semibold">{project.title}</h4>
-
+					<h4 class="text-lg font-semibold ">{project.title}</h4>
+					{#if project.type}
+						<span class="mt-1 inline-block text-xs font-medium text-muted-foreground underline">
+							{project.type}
+						</span>
+					{/if}
 					<p class="mt-2 grow text-sm text-muted-foreground">
 						{project.desc}
 					</p>
