@@ -4,6 +4,11 @@
 	import { Separator } from '$lib/components/ui/separator';
 	import { MessageCircle } from '@lucide/svelte';
 	import {skillGroups, projects} from '$lib/data/portfolio'
+
+	import Skills from '$lib/components/ui/Skills/Skills.svelte';
+	import ProjectCard from '$lib/components/ui/ProjectCard/ProjectCard.svelte';
+	import About from '$lib/components/ui/about/About.svelte';
+	import Contact from '$lib/components/ui/contact/Contact.svelte';
 </script>
 
 <!-- NAVBAR -->
@@ -44,159 +49,30 @@
 <Separator />
 
 <!-- SKILLs -->
-<section id="skills" class="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-  <h3 class="mb-8 text-3xl font-semibold">Skills & Tools</h3>
-
-  <div class="space-y-8">
-    {#each Object.entries(skillGroups) as [group, data]}
-      <div>
-        <p class="mb-3 font-medium">{group}</p>
-
-        <div class="flex flex-wrap gap-3">
-          {#each data.items as skill}
-            <span
-              class={`rounded-md px-3 py-1 text-sm ${data.color}`}
-            >
-              {skill}
-            </span>
-          {/each}
-        </div>
-      </div>
-    {/each}
-  </div>
+<section id="skills">
+	<Skills {skillGroups}/>
 </section>
 
 
 <Separator />
 
 <!-- PROJECTS -->
-<section id="projects" class="mx-auto max-w-6xl px-4 py-20">
-	<h3 class="mb-10 text-3xl font-semibold">Projects</h3>
-
-	<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-		{#each projects as project}
-			<Card class="transition hover:-translate-y-1 hover:shadow-md">
-				<CardContent class="flex h-full flex-col p-6">
-					<h4 class="text-lg font-semibold ">{project.title}</h4>
-					{#if project.type}
-						<span class="mt-1 inline-block text-xs font-medium text-muted-foreground underline">
-							{project.type}
-						</span>
-					{/if}
-					<p class="mt-2 grow text-sm text-muted-foreground">
-						{project.desc}
-					</p>
-
-					<div class="mt-4 flex flex-wrap gap-2">
-						{#each project.tech as t}
-							<span class="rounded bg-muted px-2 py-1 text-xs">
-								{t}
-							</span>
-						{/each}
-					</div>
-
-					<div class="mt-6 border-t pt-4">
-						<a
-							href={project.link}
-							target="_blank"
-							class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-						>
-							View Project →
-						</a>
-					</div>
-				</CardContent>
-			</Card>
-		{/each}
-	</div>
+<section id="projects">
+	<ProjectCard {projects}/>
 </section>
 
 <Separator />
 
 <!-- ABOUT -->
-<section id="about" class="mx-auto max-w-6xl px-4 py-20">
-	<h3 class="mb-6 text-3xl font-semibold">About Me</h3>
-
-	<p class="max-w-3xl leading-relaxed text-muted-foreground">
-		I'm a Software Engineering student specializing in Data Science, with hands-on experience
-		developing modern web applications and intelligent, data-driven systems.
-
-		<br /><br />
-
-		I have <span class="font-medium text-foreground">over 2 years of professional experience</span>
-		in web development through internships and part-time roles, contributing to real-world
-		applications in production environments. Alongside this, I actively build data science projects
-		focused on machine learning, recommendation systems, and analytical insights.
-
-		<br /><br />
-
-		I'm particularly interested in projects that balance clean UI design, scalable backend systems,
-		and practical data intelligence to solve real world problems.
-	</p>
+<section id="about">
+	<About />
 </section>
 
 <Separator />
 
 <!-- CONTACT -->
-<section id="contact" class="mx-auto max-w-6xl px-4 py-20">
-	<h3 class="mb-6 text-3xl font-semibold">Contact</h3>
-
-	<p class="mb-10 text-muted-foreground">Interested in working together or discussing a project?</p>
-
-	<!-- Contact Info -->
-	<div class="mb-10 grid gap-4 grid-cols-1 sm:grid-cols-3">
-		<!-- WhatsApp -->
-		<div class="flex items-center gap-3">
-			<span class="flex h-10 w-10 items-center justify-center rounded-full bg-muted">
-				<MessageCircle class="h-5 w-5 text-green-600" />
-			</span>
-			<div>
-				<p class="text-sm text-muted-foreground">WhatsApp</p>
-				<a
-					href="https://wa.me/60134336103"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="flex items-center gap-3 rounded-lg p-3 transition hover:bg-muted"
-				>
-					+60 13-433 6103
-				</a>
-			</div>
-		</div>
-
-		<!-- Email -->
-		<div class="flex items-center gap-3">
-			<span class="flex h-10 w-10 items-center justify-center rounded-full bg-muted"> ✉️ </span>
-			<div>
-				<p class="text-sm text-muted-foreground">Email</p>
-				<a
-					href="mailto:mozulhafizjaafar@email.com"
-					class="flex items-center gap-3 rounded-lg p-3 transition hover:bg-muted"
-				>
-					mozulhafizjaafar@email.com
-				</a>
-			</div>
-		</div>
-
-		<!-- GitHub -->
-		<div class="flex items-center gap-3">
-			<span class="flex h-10 w-10 items-center justify-center rounded-full bg-muted"> 💻 </span>
-			<div>
-				<p class="text-sm text-muted-foreground">GitHub</p>
-				<a
-					href="https://github.com/hafyze"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="flex items-center gap-3 rounded-lg p-3 transition hover:bg-muted"
-				>
-					github.com/hafyze
-				</a>
-			</div>
-		</div>
-	</div>
-
-	<!-- CTA -->
-	<a href="mailto:mozulhafizjaafar@email.com">
-		<Button size="lg">Get in Touch</Button>
-	</a>
+<section id="contact">
+	<Contact />
 </section>
 
 <!-- FOOTER -->
