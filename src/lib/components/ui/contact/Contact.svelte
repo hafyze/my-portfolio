@@ -1,17 +1,17 @@
 <script>
-	import { MessageCircle } from "@lucide/svelte";
-	import Button from "../button/button.svelte";
-
+	import { Github, Mail, MessageCircle } from '@lucide/svelte';
+	import Button from '../button/button.svelte';
 </script>
 
 <section id="contact" class="mx-auto max-w-6xl px-4 py-20">
 	<h3 class="mb-6 text-3xl font-semibold">Contact</h3>
 
-	<p class="mb-10 text-muted-foreground">Interested in working together or discussing a project?</p>
+	<p class="mb-10 max-w-2xl text-muted-foreground">
+		I am open to full-time opportunities, freelance engagements, and collaborations in web development,
+  		data products, and intelligent software systems.
+	</p>
 
-	<!-- Contact Info -->
-	<div class="mb-10 grid gap-4 grid-cols-1 sm:grid-cols-3">
-		<!-- WhatsApp -->
+	<div class="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
 		<div class="flex items-center gap-3">
 			<span class="flex h-10 w-10 items-center justify-center rounded-full bg-muted">
 				<MessageCircle class="h-5 w-5 text-green-600" />
@@ -29,9 +29,10 @@
 			</div>
 		</div>
 
-		<!-- Email -->
 		<div class="flex items-center gap-3">
-			<span class="flex h-10 w-10 items-center justify-center rounded-full bg-muted"> ✉️ </span>
+			<span class="flex h-10 w-10 items-center justify-center rounded-full bg-muted">
+				<Mail class="h-5 w-5 text-foreground" />
+			</span>
 			<div>
 				<p class="text-sm text-muted-foreground">Email</p>
 				<a
@@ -43,9 +44,10 @@
 			</div>
 		</div>
 
-		<!-- GitHub -->
 		<div class="flex items-center gap-3">
-			<span class="flex h-10 w-10 items-center justify-center rounded-full bg-muted"> 💻 </span>
+			<span class="flex h-10 w-10 items-center justify-center rounded-full bg-muted">
+				<Github class="h-5 w-5 text-foreground" />
+			</span>
 			<div>
 				<p class="text-sm text-muted-foreground">GitHub</p>
 				<a
@@ -60,8 +62,7 @@
 		</div>
 	</div>
 
-	<!-- CTA -->
 	<a href="mailto:mozulhafizjaafar@email.com">
-		<Button size="lg">Get in Touch</Button>
+		<Button size="lg">Start a Conversation</Button>
 	</a>
 </section>
