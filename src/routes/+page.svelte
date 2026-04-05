@@ -3,60 +3,7 @@
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import { Separator } from '$lib/components/ui/separator';
 	import { MessageCircle } from '@lucide/svelte';
-
-	const skillGroups = {
-  Frontend: {
-    color: 'bg-blue-100 text-blue-700',
-    items: ['SvelteKit', 'TypeScript', 'TailwindCSS', 'shadcn']
-  },
-  Backend: {
-    color: 'bg-green-100 text-green-700',
-    items: ['Python', 'FastAPI', 'MongoDB']
-  },
-  Data: {
-    color: 'bg-purple-100 text-purple-700',
-    items: ['Data Science', 'Machine Learning', 'Data Analysis']
-  }
-};
-
-
-	const projects = [
-		{
-			title: 'Smart Car Comparison & Recommendation System',
-			desc: 'AI-powered platform to compare cars, analyze market trends, and recommend vehicles based on user preferences.',
-			tech: ['SvelteKit', 'Python', 'MongoDB', 'ML'],
-			link: 'https://github.com/hafyze/Degree_FYP',
-			type: 'Web App (FYP)'
-		},
-		{
-			title: 'Malaysia Vehicle Registration Analytics Dashboard',
-			desc: 'A web-based analytics dashboard that visualizes monthly Malaysian vehicle registration data from government sources, providing interactive charts, filtering, and trend insights.',
-			tech: ['SvelteKit', 'Data Visualization', 'Public API'],
-			link: 'https://github.com/hafyze/gov-data-car',
-			type: 'Web App'
-		},
-		{
-			title: 'Roomstay Booking Website',
-			desc: 'Modern booking platform focused on clean UI, performance, and SEO optimization.',
-			tech: ['SvelteKit', 'Tailwind', 'Vercel'],
-			link: 'https://www.narkg.com/',
-			type: 'Web App'
-		},
-		{
-			title: 'Online Car Marketplace',
-			desc: 'Modern booking platform focused on clean UI, performance, and SEO optimization.',
-			tech: ['SvelteKit', 'Tailwind', 'Vercel'],
-			link: 'https://car-lists.vercel.app/',
-			type: 'Web App'
-		},
-		{
-			title: 'Expense Tracking Mobile Application',
-			desc: 'A hybrid mobile app for recording and analyzing personal expenses, offering category-based tracking and spending insights using a SvelteKit and Capacitor stack.',
-			tech: ['SvelteKit', 'Capacitor', 'TailwindCSS'],
-			link: 'https://github.com/hafyze/spending-tracker',
-			type: 'Mobile App'
-		}
-	];
+	import {skillGroups, projects} from '$lib/data/portfolio'
 </script>
 
 <!-- NAVBAR -->
@@ -72,7 +19,7 @@
 	</div>
 </header>
 
-<!-- HERO -->
+<!-- Main -->
 <section class="mx-auto max-w-6xl px-4 py-28">
 	<h2 class="mt-3 text-4xl leading-tight font-bold tracking-tight sm:text-5xl">
 		Data Science &<br />
