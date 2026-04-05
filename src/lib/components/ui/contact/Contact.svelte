@@ -1,5 +1,5 @@
 <script>
-	import { Github, Mail, MessageCircle } from '@lucide/svelte';
+	import { GitBranch, Mail, MessageCircle } from '@lucide/svelte';
 	import Button from '../button/button.svelte';
 </script>
 
@@ -46,7 +46,7 @@
 
 		<div class="flex items-center gap-3">
 			<span class="flex h-10 w-10 items-center justify-center rounded-full bg-muted">
-				<Github class="h-5 w-5 text-foreground" />
+				<GitBranch class="h-5 w-5 text-foreground" />
 			</span>
 			<div>
 				<p class="text-sm text-muted-foreground">GitHub</p>
