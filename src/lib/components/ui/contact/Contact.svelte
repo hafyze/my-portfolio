@@ -1,5 +1,5 @@
 <script>
-	import { GitBranch, Mail, MessageCircle } from '@lucide/svelte';
+	import { GitBranch, Mail, Map, MessageCircle, StepForward } from '@lucide/svelte';
 	import Button from '../button/button.svelte';
 </script>
 
@@ -60,9 +60,23 @@
 				</a>
 			</div>
 		</div>
+		<div class="flex items-center gap-3">
+			<span class="flex h-10 w-10 items-center justify-center rounded-full bg-muted">
+				<Map class="h-5 w-5 text-foreground" />
+			</span>
+			<div>
+				<p class="text-sm text-muted-foreground">Location</p>
+				<p class="flex items-center gap-3 rounded-lg p-3 transition hover:bg-muted">
+					Puchong, Selangor
+				</p>
+			</div>
+		</div>
 	</div>
 
-	<a href="mailto:mozulhafizjaafar@email.com">
-		<Button size="lg">Start a Conversation</Button>
-	</a>
+	<div>
+		<a href="mailto:mozulhafizjaafar@email.com" class="justfiy-center mr-auto">
+			<Button size="lg">Send Message <StepForward /></Button>
+		</a>
+	</div>
+	
 </section>

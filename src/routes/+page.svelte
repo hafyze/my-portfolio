@@ -3,17 +3,19 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Separator } from '$lib/components/ui/separator';
 	import { experiences, projects, skillGroups } from '$lib/data/portfolio';
+	import { SunIcon, MoonIcon } from '@lucide/svelte';
 
 	import Skills from '$lib/components/ui/Skills/Skills.svelte';
 	import ProjectCard from '$lib/components/ui/ProjectCard/ProjectCard.svelte';
 	import Experience from '$lib/components/ui/experience/Experience.svelte';
 	import About from '$lib/components/ui/about/About.svelte';
 	import Contact from '$lib/components/ui/contact/Contact.svelte';
+	import { toggleMode } from 'mode-watcher';
 </script>
 
 <header class="sticky top-0 z-50 border-b bg-background">
 	<div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:py-4">
-		<h1 class="max-w-[13rem] text-base font-bold leading-tight sm:max-w-none sm:text-lg">
+		<h1 class="max-w-52 text-base font-bold leading-tight sm:max-w-none sm:text-lg">
 			Mohamad Zulhafiz Bin Mohd Jaafar
 		</h1>
 		<nav class="hidden gap-6 text-sm font-medium sm:flex">
@@ -22,6 +24,15 @@
 			<a class="transition hover:text-primary" href="#experience">Experience</a>
 			<a class="transition hover:text-primary" href="#about">About</a>
 			<a class="transition hover:text-primary" href="#contact">Contact</a>
+			<Button onclick={toggleMode} variant="outline" size="icon">
+				<SunIcon
+					class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all! dark:scale-0 dark:-rotate-90"
+				/>
+				<MoonIcon
+					class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all! dark:scale-100 dark:rotate-0"
+				/>
+				<span class="sr-only">Toggle theme</span>
+</Button>
 		</nav>
 	</div>
 </header>
