@@ -19,20 +19,28 @@
 						<h4 class="text-lg font-semibold sm:text-xl">{experience.role}</h4>
 						<p class="text-sm text-foreground/80 sm:text-base">{experience.company}</p>
 					</div>
-					<span class="text-sm font-medium text-muted-foreground">{experience.duration}</span>
+					<span class="shrink-0 text-sm font-medium text-muted-foreground">{experience.duration}</span>
 				</div>
 
 				<p class="mt-4 max-w-3xl leading-7 text-muted-foreground">
 					{experience.summary}
 				</p>
 
-				<div class="mt-5 flex flex-wrap gap-2">
+				<ul class="mt-5 grid gap-2 text-sm leading-6 text-muted-foreground sm:grid-cols-2">
 					{#each experience.highlights as highlight}
-						<span class="rounded-full border bg-background px-3 py-1 text-xs text-muted-foreground sm:text-sm">
-							{highlight}
-						</span>
+						<li class="rounded-md border bg-background px-3 py-2">{highlight}</li>
 					{/each}
-				</div>
+				</ul>
+
+				{#if experience.tech}
+					<div class="mt-5 flex flex-wrap gap-2 border-t pt-4">
+						{#each experience.tech as tech}
+							<span class="rounded bg-muted px-2 py-1 text-xs text-muted-foreground">
+								{tech}
+							</span>
+						{/each}
+					</div>
+				{/if}
 			</div>
 		{/each}
 	</div>

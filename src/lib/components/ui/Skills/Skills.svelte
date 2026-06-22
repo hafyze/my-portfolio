@@ -15,7 +15,11 @@
 		{#each Object.entries(skillGroups) as [group, data]}
 			<div>
 				<p class="mb-3 font-medium">
-					{group === 'DataAndML' ? 'Data & ML' : group}
+					{group === 'DataAndML'
+						? 'Data & ML'
+						: group === 'LanguagesSpoken'
+							? 'Languages'
+							: group}
 				</p>
 
 				<div class="flex flex-wrap gap-3">
